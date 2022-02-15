@@ -37,7 +37,7 @@ const Login = () => {
         <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
           <div className="shadow-2xl">
             <GoogleLogin
-              clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
+              clientId="680490581635-c66cvbb7berp2r50itno2kdecnk8267u.apps.googleusercontent.com"
               render={(renderProps) => (
                 <button
                   type="button"
