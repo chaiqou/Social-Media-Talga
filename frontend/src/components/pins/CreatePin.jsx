@@ -53,6 +53,7 @@ const CreatePin = ({ user }) => {
         _type: "pin",
         title,
         about,
+
         destination,
         image: {
           _type: "image",
