@@ -53,7 +53,6 @@ const CreatePin = ({ user }) => {
         _type: "pin",
         title,
         about,
-
         destination,
         image: {
           _type: "image",
@@ -69,12 +68,12 @@ const CreatePin = ({ user }) => {
         },
         category,
       };
-
       client.create(doc).then(() => {
         navigate("/");
       });
     } else {
       setFields(true);
+
       setTimeout(() => {
         setFields(false);
       }, 2000);
@@ -84,16 +83,26 @@ const CreatePin = ({ user }) => {
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5">
       {fields && (
-        <p className="text-red-500 mb-5 text-xl trasition-all duration-150 ease-in">
-          Please fill all fields.
-        </p>
+        <div
+          class=" font-bold p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800"
+          role="alert"
+        >
+          Fill things up and try submitting again.
+        </div>
       )}
 
       <div className="flex lg:flex-row flex-col justify-center items-center bg-white lg:p-5 p-3 lg:w-4/5 w-full">
         <div className="bg-secondaryColor p-3 flex flex-0.7 w-full">
           <div className="flex justify-center items-center flex-col border-2 border-dotted border-gray-300 p-3 w-full h-420">
             {loading && <Spinner />}
-            {wrongImageType && <p>Wrong image type</p>}
+            {wrongImageType && (
+              <div
+                className="font-medium p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
+                role="alert"
+              >
+                Wrong image type
+              </div>
+            )}
             {!imageAsset ? (
               <label>
                 <div className="flex flex-col items-center justify-center h-full">
@@ -104,7 +113,7 @@ const CreatePin = ({ user }) => {
                     <p className="text-lg">Click to upload</p>
                   </div>
                   <p className="mt-32 text-gray-400">
-                    Use high quality JPG, SVG , PNG or GIF less than 20mb
+                    Upload high quality JPG, SVG , PNG or GIF less than 20mb
                   </p>
                 </div>
                 <input
@@ -121,13 +130,13 @@ const CreatePin = ({ user }) => {
                   alt="uploaded-pics"
                   className="h-full w-full"
                 />
-                <buton
+                <button
                   type="button"
                   onClick={() => setImageAsset(null)}
-                  className="absolute bottom-3 right-3 p-3 rounded-full bg-white text-xl cursor-pointer outline-none hoer:shadow-md transition-all duration-500 ease-in-out"
+                  className="text-white bg-blue-700 cursor-pointer hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   <MdDelete />
-                </buton>
+                </button>
               </div>
             )}
           </div>
@@ -173,13 +182,14 @@ const CreatePin = ({ user }) => {
                 onChange={(e) => setCategory(e.target.value)}
                 className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
               >
-                <otion value="other" className="bg-white">
+                <option value="other" className="bg-white">
                   Select Category
-                </otion>
+                </option>
                 {categories.map((category) => (
                   <option
                     className="text-base border-0 outline-none capitalize bg-white text-black"
                     value={category.name}
+                    key={category.name}
                   >
                     {category.name}
                   </option>
@@ -190,9 +200,9 @@ const CreatePin = ({ user }) => {
               <button
                 type="button"
                 onClick={savePin}
-                className="bg-red-500 texth-white font-bold p-2 rounded-full w-28 outline-none"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                Save photo
+                Save
               </button>
             </div>
           </div>

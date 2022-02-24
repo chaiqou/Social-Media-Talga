@@ -7,7 +7,7 @@ import UserProfile from "../userProfile/UserProfile";
 import Pins from "../pins/Pins";
 import { client } from "../../client";
 import { userQuery } from "../../utils/data";
-import logo from "../../assets/logo.png";
+import { GiPsychicWaves } from "react-icons/gi";
 
 const Home = () => {
   const [toggleSidebar, setToggleSideBar] = useState(false);
@@ -42,10 +42,10 @@ const Home = () => {
             onClick={() => setToggleSideBar(true)}
           />
           <Link to="/">
-            <img src={logo} alt="logoo" className="w-28" />
+            <GiPsychicWaves className="w-28" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
-            <img src={user?.image} alt="logoo" className="w-28" />
+            <img src={user?.image} alt="logo" className="w-28" />
           </Link>
         </div>
         {toggleSidebar && (

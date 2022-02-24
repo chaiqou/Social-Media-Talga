@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
-import { IoIosArrowForward } from "react-icons/io";
-import logo from "../../assets/logo.png";
+import { GiPsychicWaves } from "react-icons/gi";
 
 const isNotActiveStyle =
   "flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize";
@@ -11,8 +10,8 @@ const isActiveStyle =
 
 const categories = [
   { name: "Animals" },
-  { name: "Wallpapers" },
-  { name: "Photography" },
+  { name: "Georgia" },
+  { name: "Food" },
   { name: "Coding" },
   { name: "Gaming" },
   { name: "other" },
@@ -30,7 +29,7 @@ const Sidebar = ({ user, closeToggle }) => {
           className="flex px-5 gap-2 my-6 pt-1 w-190 items-center"
           onClick={handleCloseSidebar}
         >
-          <img src={logo} alt="logo" className="w-full" />
+          <GiPsychicWaves className="w-full h-8 flex text-cyan-300" />
         </Link>
         <div className="flex flex-col gap-5">
           <NavLink

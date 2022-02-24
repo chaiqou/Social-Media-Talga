@@ -90,7 +90,7 @@ const Pin = ({ pin }) => {
               {alreadySaved?.length !== 0 ? (
                 <button
                   type="button"
-                  className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   {pin?.save?.length} Saved
                 </button>
@@ -117,7 +117,7 @@ const Pin = ({ pin }) => {
                 >
                   {" "}
                   <BsFillArrowUpRightCircleFill />
-                  {destination?.slice(8, 17)}...
+                  {destination}
                 </a>
               ) : undefined}
               {postedBy?._id === user?.googleId && (
