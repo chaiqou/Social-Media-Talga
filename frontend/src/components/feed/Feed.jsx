@@ -31,6 +31,8 @@ const Feed = () => {
   if (loading)
     return <Spinner message="We are looking for new photos for your feed <3" />;
 
+  if (!pins?.length) return <Spinner message="Empyt" />;
+
   return <div>{pins && <MasonryLayout pins={pins} />}</div>;
 };
 
