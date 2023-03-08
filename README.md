@@ -1,2 +1,1 @@
-# Social-Media-Talga used technologies: React,Sanity.io,Tailwind CSS
-link => https://talga-media.netlify.app/
+Social-Media-Talga is a web application built using React, Sanity.io, and Tailwind CSS. It allows users to create and manage their own profiles, connect with other users, and share content such as posts and images.
